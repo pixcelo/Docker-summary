@@ -35,7 +35,11 @@ namespace MacroManager
             try
             {
                 var es = new ExcelService();
-                es.AddMacro(textBoxBrowse.Text, "Main");
+                //es.AddMacro(textBoxBrowse.Text, "Main");
+                es.CopySheet(textBoxBrowse.Text);
+
+                MessageBox.Show("Š®—¹");
+                return;
             }
             catch (Exception ex)
             {
