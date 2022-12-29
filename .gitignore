@@ -1,3 +1,7 @@
+# build files
 .vs
 bin
 obj
+
+# tmp office files
+~$*

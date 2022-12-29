@@ -1,3 +1,5 @@
+using MacroManager.Service;
+
 namespace MacroManager
 {
     public partial class FormMain : Form
@@ -25,7 +27,25 @@ namespace MacroManager
 
         private void buttonExcute_Click(object sender, EventArgs e)
         {
+            this.Run();
+        }
 
+        private void Run()
+        {
+            try
+            {
+                var es = new ExcelService();
+                es.AddMacro(textBoxBrowse.Text, "Main");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message + ex.StackTrace,
+                    "Error", 
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }
